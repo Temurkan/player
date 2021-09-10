@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="scroll">
+        <i class="fas fa-arrows-alt-h"></i>
+        <p>Scroll to more info</p>
+        <i class="fas fa-long-arrow-alt-down"></i>
+      </div>
+      <div class="block">
+        <div class="menu-list">
+          <div class="text-bg">
+            <p class="speed">0.5</p>
+            <p class="speed active">1</p>
+            <p class="speed">1.5</p>
+            <p class="speed">2</p>
+            <p class="speed">2.5</p>
+          </div>
+          <div class="text-bg">
+            <p class="cancel">Cancel</p>
+          </div>
+        </div>
+        <div class="interface">
+          <div class="close" title="Main">
+            <div class="close-left"></div>
+            <div class="close-right"></div>
+          </div>
+          <div class="song-info">
+            <div class="cover">
+              <img src="" alt="" />
+            </div>
+            <div class="lyric">
+              <p class="lyrics-text"></p>
+            </div>
+            <div class="title">
+              <h2 class="name"></h2>
+              <h2 class="artist"></h2>
+            </div>
+          </div>
+          <div class="progress-area">
+            <div class="track"></div>
+            <div class="timer">
+              <span class="current-time">0:00</span>
+              <span class="max-duration">0:00</span>
+            </div>
+            <audio id="main-audio" src=""></audio>
+          </div>
+          <div class="player">
+            <div class="btns">
+              <div id="prev" class="ico">
+                <i class="fas fa-backward" title="Previous track"></i>
+              </div>
+              <div class="play_pause ico" title="Play">
+                <i class="fas fa-play"></i>
+              </div>
+              <div id="next" class="ico" title="Next track">
+                <i class="fas fa-forward"></i>
+              </div>
+            </div>
+          </div>
+          <div class="volume">
+            <i class="fas fa-volume-off"></i>
+            <input
+              class="vol"
+              type="range"
+              min="0"
+              max="100"
+              step="5"
+              value="100"
+            />
+            <i class="fas fa-volume-up"></i>
+          </div>
+          <div class="menu">
+            <div class="icon">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <div class="icon">
+              <i class="fas fa-adjust"></i>
+            </div>
+            <div class="icon">
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+          </div>
+          <div class="repshuf">
+            <div class="repeat-btn" title="Repeat">
+              <i class="fas fa-redo-alt"></i>
+              <p>Repeat 1</p>
+            </div>
+            <div class="shuffle-btn" title="Shuffle">
+              <i class="fas fa-random"></i>
+              <p>Shuffle</p>
+            </div>
+          </div>
+          <div class="playlist">
+            <h3>Playlist</h3>
+            <ul class="list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/playlist.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
+  </body>
+</html>

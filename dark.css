@@ -1,0 +1,435 @@
+@font-face {
+    font-family: 'SFUI';
+    src: url(fonts/SFUIText-Light.ttf);
+}
+@font-face {
+    font-family: 'SFUI-reg';
+    src: url(fonts/SFUIDisplay-Regular.ttf);
+}
+@font-face {
+    font-family: 'SFUI-med';
+    src: url(fonts/SFUIDisplay-Medium.ttf);
+}
+
+:root{
+    --bg: #1c1c1e;
+    --text: #fff;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body{
+    justify-content: center;   
+    display: flex;
+    font-size: 30px;
+    font-family: 'SFUI-reg';
+    background-color: var(--bg);
+    transition: 0.5s;
+}
+
+.container{
+    margin: 2px;
+    padding: 0;
+    border: 5px solid #a194e0;
+    border-radius: 90px;
+    box-shadow: 15px 10px 20px #383838;
+}
+
+.scroll{
+    position: absolute;
+    top: 82%;
+    left: 27%;
+    -webkit-transform: rotate(-90deg); 
+    transform: rotate(-90deg);
+    display: flex;
+    align-items: center;
+    opacity: 0.2;
+}
+
+.block{
+    border: 5px solid #000;
+    border-radius: 85px;
+    overflow: hidden;
+    background-color: var(--bg);
+    transition: 0.5s;
+}
+
+.interface{
+    width: 500px;
+    height: 940px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 70px;
+    overflow: scroll;
+}
+
+.filter{
+    filter: blur(50px);
+    opacity: 0.5;
+    background-color: #000;
+}
+
+.interface::-webkit-scrollbar{ 
+    width: 0;
+}
+
+.close{
+    position: relative;
+    
+}
+
+.close-left{
+    width: 25px;
+    height: 5px;
+    top: -30px;
+    left: 220px;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: rotate(25deg);
+    position: absolute;
+}
+
+.close-right{
+    width: 25px;
+    height: 5px;
+    top: -30px;
+    left: 240px;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: rotate(-25deg);
+    position: absolute;
+}
+
+.cover img{
+    width: 400px;
+    height: 400px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 50px #808080;
+    transition: 0.5s;
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+img.lyrics-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px #808080;
+    transition: 0.5s;
+    margin: 0 -40px 0 40px;
+}
+
+.progress-area{
+    height: 3px;
+    width: 80%;
+    margin: 30px 50px;
+    background: #2d2d2d;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.track{
+    height: inherit;
+    width: 0;
+    position: relative;
+    border-radius: inherit;
+    background-color: #e2e2e2;
+}
+
+.track::before{
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: inherit;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.progress-area:hover .track::before{
+    opacity: 1;
+}
+
+.timer{
+    display: flex;
+    justify-content: space-between;
+    color: #a8a8a8;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.track::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 10px;
+    width: 10px;
+    background: #d2d2d2;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.4s;
+    z-index: 3;
+    box-shadow: 0px 3px 10px #d2d2d2;
+}
+
+.track::-webkit-slider-thumb:hover{
+    width: 20px;
+    height: 20px;
+}
+
+.title{
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.title .name,
+.title .artist{
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: #7a7a7a;
+}
+
+.artist{
+    color: #ff2d55!important;
+}
+
+.btns{
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ico{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+i{
+    font-size: 40px;
+    color: #696969;
+}
+
+.ico:hover{
+    background-color: #363636;
+}
+
+.text{
+    color: #ff2d55;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.volume{
+    display: flex;
+    align-items: center;
+    margin: 20px 60px 40px;
+}
+
+.volume i{
+    font-size: 20px;
+    color: #2d2d2d;
+}
+
+input {
+    -webkit-appearance: none;
+    height: 3px;
+    background: #2d2d2d;
+    border-radius: 5px;
+    outline: none;
+    width: 300px;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 30px;
+    width: 30px;
+    background: #2d2d2d;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.4s;
+    z-index: 3;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px;
+}
+
+.menu .icon{
+    width: 50px;
+    height: 50px;
+    padding: 5px 0;
+}
+
+.menu .icon:hover{
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #363636;
+    cursor: pointer;
+}
+
+.menu i{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    color: #ff2d55;
+}
+
+.menu-list{
+    position: absolute;
+    color: #ff2d55;
+    justify-content: space-between;
+    top: 53%;
+    margin-left: 25px;
+    z-index: 99;
+    display: none;
+}
+
+.menu-list .text-bg{
+    width: 450px;
+    background-color: #ececec;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu-list p{
+    padding: 15px 0;
+}
+
+.menu-list .speed{
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.menu-list .speed:last-child{
+    border: none;
+}
+
+.menu-list .cancel{
+    color: #2d7dff;
+}
+
+.lyric.active{
+    padding: 50px;
+    font-family: 'SFUI-med';
+}
+
+.repshuf{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 20px 40px 0;
+    border-top: 2px solid #2d2d2d;
+}
+
+.repeat-btn,
+.shuffle-btn{
+    background-color: #2d2d2d;
+    padding: 15px 38px;
+    width: 200px;
+    border-radius: 10px;
+    display: flex;
+    color: #ff2d55;
+    align-items: center;
+    cursor: pointer;
+}
+
+.repeat-btn.active,
+.shuffle-btn.active{
+    color: #fff;
+    background-color: #ff2d55;
+}
+
+.repeat-btn i,
+.shuffle-btn i{
+    font-size: 20px;
+    margin-right: 10px;
+    color: #ff2d55;
+}
+
+.repeat-btn i.active,
+.shuffle-btn i.active{
+    color: #fff;
+}
+
+.repeat-btn p,
+.shuffle-btn p{
+    font-size: 25px;
+}
+
+.playlist{
+    margin: 20px 0;
+    padding: 25px;
+    border-top: 2px solid #2d2d2d;
+    text-align: left;
+    font-size: 25px;
+    font-family: 'SFUI-med';
+}
+
+.playlist h3{
+    padding-bottom: 15px;
+    color: #888888;
+}
+
+.playlist .list{
+    margin-top: 10px;
+}
+
+.playlist .list-item{
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 10px;
+    border-top: 2px solid #2d2d2d;
+}
+
+.playlist .list-item img{
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.playlist .list .list-item .list-text{
+    width: 100%;
+    margin-left: 10px;
+}
+
+.playlist .list-item p{
+    font-size: 20px;
+    color: #888888;
+}
+
+.playlist .list-item span{
+    font-size: 18px;
+    color: #d2d2d2;
+}
+
+.playlist .playing i{
+    font-size: 20px;
+    color: #e2e2e2;
+}
