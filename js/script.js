@@ -17,10 +17,12 @@ const interface = document.querySelector('.interface'),
     list = interface.querySelector('.list'),
     volume = interface.querySelector('input[type=range]'),
     audio = interface.querySelector('audio')
+let mask = document.querySelector('.lds-spinner')
 
 let musicIndex = Math.floor((Math.random() * allMusic.length) + 1)
 
 window.addEventListener('load', () => {
+    mask.classList.add('hide')
     loadMusic(musicIndex)
     playingNow()
 })
